@@ -1,13 +1,17 @@
 const express = require('express');
 
+const indexRoutes = require('./routes/index.routes');
+const productRoutes = require('./routes/products.routes');
+
+// initialize server
 const app = express();
 
-app.set('port', process.env.PORT || 3000);
+// config
+app.set('port', process.env.PORT || 4000);
 app.use(express.urlencoded({ extended: false }));
-app.get('/', (request, response) => {
-	response.send({
-		message: 'hello'
-	});
-});
+
+// routes
+app.use(indexRoutes);
+app.use(productRoutes);
 
 module.exports = app;
