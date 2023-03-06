@@ -30,6 +30,8 @@ const ProductSchema = Schema({
 	message: {
 		type: Array
 	}
+}, {
+    versionKey: false
 });
 
 export default model('Product', ProductSchema);
