@@ -1,17 +1,17 @@
-const express = require('express');
+import express, { urlencoded } from 'express';
 
-const indexRoutes = require('./routes/index.routes');
-const productRoutes = require('./routes/products.routes');
+import indexRoutes from './routes/index.routes.js';
+import productRoutes from './routes/products.routes.js';
 
 // initialize server
 const app = express();
 
 // config
 app.set('port', process.env.PORT || 4000);
-app.use(express.urlencoded({ extended: false }));
+app.use(urlencoded({ extended: false }));
 
 // routes
 app.use(indexRoutes);
 app.use(productRoutes);
 
-module.exports = app;
+export default app;
