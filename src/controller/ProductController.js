@@ -1,9 +1,9 @@
 const ProductController = {};
+import Product from '../model/Product.js';
 
-ProductController.sendProducts = (request, response) => {
-	response.json({
-		name: 'product1'
-	});
+ProductController.getProducts = async (request, response) => {
+	const products = await Product.find();
+	response.json(products);
 };
 
 export default ProductController;
