@@ -6,4 +6,4 @@ IndexController.sendMainInfo = (request, response) => {
 	});
 };
 
-module.exports = IndexController;
+export default IndexController;

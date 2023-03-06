@@ -6,4 +6,4 @@ ProductController.sendProducts = (request, response) => {
 	});
 };
 
-module.exports = ProductController;
+export default ProductController;
