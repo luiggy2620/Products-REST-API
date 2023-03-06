@@ -10,6 +10,7 @@ const app = express();
 // config
 app.set('port', process.env.PORT || 4000);
 app.use(cors());
+app.use(express.json());
 app.use(urlencoded({ extended: false }));
 
 // routes
