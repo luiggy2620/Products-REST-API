@@ -7,18 +7,13 @@ ProductController.getProducts = async (request, response) => {
 };
 
 ProductController.addProduct = async (request, response) => {
-	const { title, description, price, amount, tags, images, types } =
-		request.body;
-	const newProduct = new Product({
-		title,
-		description,
-		price,
-		amount,
-		tags,
-		images,
-		types
-	});
+	const newProduct = new Product(request.body);
 	await newProduct.save();
+	response.sendStatus(200);
+};
+
+ProductController.updateProduct = async (request, response) => {
+	await Product.findByIdAndUpdate(request.params.id, request.body);
 	response.sendStatus(200);
 };
 
