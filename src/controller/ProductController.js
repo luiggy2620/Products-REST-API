@@ -22,4 +22,9 @@ ProductController.addProduct = async (request, response) => {
 	response.sendStatus(200);
 };
 
+ProductController.deleteProduct = async (request, response) => {
+	await Product.findByIdAndDelete(request.params.id);
+	response.sendStatus(200);
+};
+
 export default ProductController;
