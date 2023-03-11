@@ -1,5 +1,3 @@
-import dotenv from 'dotenv';
-dotenv.config();
 import { connectToDatabase } from './database.js';
 
 connectToDatabase();
