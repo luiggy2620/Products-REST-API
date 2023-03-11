@@ -1,6 +1,7 @@
 const ProductController = {};
 import { uploadImage } from '../config/cloudinary.js';
 import Product from '../model/Product.js';
+import fs from 'fs-extra';
 
 ProductController.getProducts = async (request, response) => {
 	const products = await Product.find();
@@ -13,6 +14,7 @@ ProductController.addProduct = async (request, response) => {
 		const imagePath = request.files.images.tempFilePath;
 		const image = await uploadImage(imagePath);
 		newProduct.images.push(image.secure_url);
+		fs.removeSync(imagePath);
 	}
 	await newProduct.save();
 	response.sendStatus(200);
