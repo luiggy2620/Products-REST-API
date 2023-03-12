@@ -18,7 +18,7 @@ const ProductSchema = Schema(
 		tags: {
 			type: Array
 		},
-		message: {
+		reviews: {
 			type: Array
 		}
 	},

@@ -4,7 +4,7 @@ import {
 	updateProduct,
 	deleteProduct
 } from '../requests/ProductReq.js';
-import { getProducts } from '../responses/productRes.js';
+import { getProducts } from '../responses/ProductRes.js';
 
 const router = Router();
 

@@ -1,6 +1,6 @@
 import { model, Schema } from 'mongoose';
 
-export const TypeOfProduct = Schema(
+export const ProductType = Schema(
 	{
 		productId: {
 			type: Schema.Types.ObjectId,
@@ -15,8 +15,7 @@ export const TypeOfProduct = Schema(
 		},
 		image: {
 			public_id: String,
-			secure_id: String,
-			required: true
+			secure_url: String
 		}
 	},
 	{
@@ -24,4 +23,4 @@ export const TypeOfProduct = Schema(
 	}
 );
 
-export default model('TypeOfProduct', TypeOfProduct);
+export default model('ProductType', ProductType);

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { sendMainInfo } from '../responses/indexRes.js';
+import { sendMainInfo } from '../responses/IndexRes.js';
 
 const router = Router();
 
