@@ -17,3 +17,11 @@ export const uploadImage = async (imagePath) => {
 		console.log(err);
 	}
 };
+
+export const destroyImage = async (public_id) => {
+	try {
+		await cloudinary.uploader.destroy(public_id);
+	} catch (err) {
+		console.log(err);
+	}
+};

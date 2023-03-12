@@ -3,7 +3,8 @@ import fileUpload from 'express-fileupload';
 import cors from 'cors';
 
 import indexRoutes from './routes/index.routes.js';
-import productRoutes from './routes/products.routes.js';
+import productsRoutes from './routes/products.routes.js';
+import productTypesRoutes from './routes/productTypes.routes.js';
 import { PORT } from './env/variables.js';
 
 // initialize server
@@ -23,6 +24,7 @@ app.use(
 
 // routes
 app.use(indexRoutes);
-app.use(productRoutes);
+app.use(productsRoutes);
+app.use(productTypesRoutes);
 
 export default app;
