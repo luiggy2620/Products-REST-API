@@ -18,6 +18,11 @@ export const addProductType = async (request, response) => {
 	response.sendStatus(200);
 };
 
+export const updateProductType = async (request, response) => {
+	await ProductType.findByIdAndUpdate(request.params.id, request.body);
+	response.sendStatus(200);
+};
+
 export const deleteProductType = async (request, response) => {
 	const productToDelete = await ProductType.findByIdAndDelete(
 		request.params.id
