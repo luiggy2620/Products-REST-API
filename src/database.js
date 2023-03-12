@@ -1,9 +1,10 @@
 import { set, connect } from 'mongoose';
+import { MONGO_URI } from './env/variables.js';
 
 set('strictQuery', true);
 
 export const connectToDatabase = async () => {
-	await connect(process.env.MONGO_URI, {
+	await connect(MONGO_URI, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true
 	})
