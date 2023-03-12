@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 
-import { uploadImage } from '../config/cloudinary.js';
+import { uploadImage, destroyImage } from '../config/cloudinary.js';
 import ProductType from '../model/ProductType.js';
 
 export const addProductType = async (request, response) => {
@@ -19,6 +19,10 @@ export const addProductType = async (request, response) => {
 };
 
 export const deleteProductType = async (request, response) => {
-	await ProductType.findByIdAndDelete(request.params.id);
+	const productToDelete = await ProductType.findByIdAndDelete(
+		request.params.id
+	);
+	const public_id = productToDelete.image.public_id;
+	await destroyImage(public_id);
 	response.sendStatus(200);
-}
+};
