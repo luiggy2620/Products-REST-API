@@ -1,14 +1,19 @@
 import { Router } from 'express';
-import ProductController from '../controller/ProductController.js';
+import {
+	addProduct,
+	updateProduct,
+	deleteProduct
+} from '../requests/ProductReq.js';
+import { getProducts } from '../responses/productRes.js';
 
 const router = Router();
 
-router.get('/api/products', ProductController.getProducts);
+router.get('/api/products', getProducts);
 
-router.post('/api/product/add', ProductController.addProduct);
+router.post('/api/product/add', addProduct);
 
-router.put('/api/product/:id', ProductController.updateProduct);
+router.put('/api/product/:id', updateProduct);
 
-router.delete('/api/product/:id', ProductController.deleteProduct);
+router.delete('/api/product/:id', deleteProduct);
 
 export default router;

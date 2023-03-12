@@ -4,6 +4,7 @@ import cors from 'cors';
 
 import indexRoutes from './routes/index.routes.js';
 import productRoutes from './routes/products.routes.js';
+import typeProductRoutes from './routes/typeProduct.routes.js';
 import { PORT } from './env/variables.js';
 
 // initialize server
@@ -24,5 +25,6 @@ app.use(
 // routes
 app.use(indexRoutes);
 app.use(productRoutes);
+app.use(typeProductRoutes);
 
 export default app;
