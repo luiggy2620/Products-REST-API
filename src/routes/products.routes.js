@@ -4,11 +4,16 @@ import {
 	updateProduct,
 	deleteProduct
 } from '../requests/ProductReq.js';
-import { getProducts } from '../responses/ProductRes.js';
+import {
+	getProductsAndTypes,
+	getProductsToShow
+} from '../responses/ProductRes.js';
 
 const router = Router();
 
-router.get('/api/products', getProducts);
+router.get('/api/products', getProductsToShow);
+
+router.get('/api/products/types', getProductsAndTypes);
 
 router.post('/api/product/add', addProduct);
 
